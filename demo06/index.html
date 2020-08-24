@@ -11,19 +11,26 @@
     <div id="example"></div>
     <script type="text/babel">
 
-      var data = 123;
+      var data = "123";
 
       class MyTitle extends React.Component {
+        static defaultProps = {
+          // 设置默认值
+          title: 'item',
+          age:18
+        }
+
         static propTypes = {
           title: PropTypes.string.isRequired,
         }
+  
         render() {
           return <h1> {this.props.title} </h1>;
         }
       }
 
       ReactDOM.render(
-        <MyTitle title={data} />,
+        <MyTitle   />,
         document.getElementById('example')
       );
 
